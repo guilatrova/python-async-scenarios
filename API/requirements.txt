@@ -1,0 +1,3 @@
+aiohttp==3.7.4.post0
+Django==3.2.3
+requests==2.25.1

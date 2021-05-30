@@ -1,0 +1,2 @@
+-r ./API/requirements.txt
+-r ./database/requirements.txt
