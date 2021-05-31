@@ -1,2 +1,3 @@
 -r ./API/requirements.txt
--r ./database/requirements.txt
+-r ./database/pgsql/requirements.txt
+-r ./database/sqlite/requirements.txt
