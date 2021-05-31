@@ -4,7 +4,7 @@ from typing import NoReturn
 import timeit
 
 
-DB = "../brazil-slow.db"
+DB = "../slow.db"
 COLORS = [
     "\033[95m",
     "\033[94m",

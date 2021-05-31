@@ -4,7 +4,7 @@ import sqlite3
 from contextlib import closing
 
 
-DB = "../brazil-slow.db"
+DB = "../slow.db"
 COLORS = [
     "\033[95m",
     "\033[94m",
