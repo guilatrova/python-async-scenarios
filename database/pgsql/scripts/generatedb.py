@@ -3,7 +3,7 @@ import psycopg2
 
 BASE_CREATE_SCRIPT = "./brazil-create-db.sql"
 INSERT_SCRIPT = "./brazil-insert-cities.sql"
-REPEAT_INSERT = 400
+REPEAT_INSERT = 1000
 
 def create_db(cursor):
     with open(BASE_CREATE_SCRIPT, "r") as sql:
