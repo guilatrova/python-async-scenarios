@@ -1,4 +1,4 @@
-# Python Async Scenarios
+# Python Async Scenarios 🐍🔀
 
 I created this repository to be used to understand how async works.
 Feel free to reach out to the blog post to play with it as we discuss concurrency: https://blog.guilatrova.dev/async-python-in-real-life/
