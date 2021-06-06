@@ -34,7 +34,7 @@ class Requester:
         print(f"{prefix}Requesting '{url}'{suffix}")
 
         content = requests.get(url).text
-        print(f"{prefix}Request finally done! Server replied '{content}'{suffix}")
+        print(f"{prefix}Request is finally done! Server replied '{content}'{suffix}")
 
 
 async def main():

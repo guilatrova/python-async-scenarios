@@ -32,7 +32,7 @@ class Requester:
         async with aiohttp.ClientSession() as session:
             async with session.get(url) as resp:
                 content = await resp.text()
-                print(f"{prefix}Request finally done! Server replied '{content}'{suffix}")
+                print(f"{prefix}Request is finally done! Server replied '{content}'{suffix}")
 
 
 async def main():
