@@ -26,7 +26,7 @@ def main():
             if not db_already_created:
                 create_db(cursor)
 
-            with open(INSERT_SCRIPT, "r") as sql:
+            with open(INSERT_SCRIPT, "r", encoding="utf8") as sql:
                 insert_script = sql.read()
 
             for i in range(1, REPEAT_INSERT + 1):
