@@ -1,5 +1,4 @@
 import asyncio
-from typing import NoReturn
 import requests
 import timeit
 
@@ -23,7 +22,7 @@ class Requester:
         self.rid = Requester.rid
         self.color = COLORS[self.rid]
 
-    def pull_from_server(self, secs: int) -> NoReturn:
+    def pull_from_server(self, secs: int) -> None:
         url = URL + str(secs)
         prefix = f"{self.color}R{self.rid}: "
         suffix = f"{ENDC}"
@@ -33,7 +32,7 @@ class Requester:
         print(f"{prefix}Request is finally done! Server replied '{content}'{suffix}")
 
 
-def main():
+def main() -> None:
     r1 = Requester()
     r2 = Requester()
     r3 = Requester()
@@ -48,6 +47,7 @@ def main():
     print("-" * 10)
     print(f"Time elapsed: {timeit.default_timer() - starttime}")
     print("=" * 10)
+
 
 if __name__ == "__main__":
     main()

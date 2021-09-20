@@ -1,6 +1,5 @@
 import asyncio
 import aiosqlite
-from typing import NoReturn
 import timeit
 
 
@@ -42,7 +41,7 @@ class Requester:
         self.rid = Requester.rid
         self.color = COLORS[self.rid]
 
-    async def query_from_db(self, query: str) -> NoReturn:
+    async def query_from_db(self, query: str) -> None:
         prefix = f"{self.color}R{self.rid}: "
         suffix = f"{ENDC}"
         print(f"{prefix}Querying '{query}'{suffix}")
@@ -57,7 +56,7 @@ class Requester:
         print(f"{prefix}Query made! Db replied '{content}' rows{suffix}")
 
 
-async def main():
+async def main() -> None:
     r1 = Requester()
     r2 = Requester()
     r3 = Requester()
