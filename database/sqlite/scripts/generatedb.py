@@ -7,14 +7,15 @@ BASE_CREATE_SCRIPT = "./brazil-create-db.sql"
 INSERT_SCRIPT = "./brazil-insert-cities.sql"
 REPEAT_INSERT = 400
 
-def create_db(cursor):
+
+def create_db(cursor: sqlite3.Cursor) -> None:
     with open(BASE_CREATE_SCRIPT, "r") as sql:
         cursor.executescript(sql.read())
 
     print("Database created!")
 
 
-def count_cities(cursor):
+def count_cities(cursor: sqlite3.Cursor) -> int:
     return cursor.execute("SELECT count(*) from cities").fetchone()[0]
 
 

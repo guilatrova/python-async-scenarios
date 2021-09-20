@@ -43,7 +43,7 @@ class Requester:
 
     async def query_from_db(self, query: str) -> None:
         prefix = f"{self.color}R{self.rid}: "
-        suffix = f"{ENDC}"
+        suffix = ENDC
         print(f"{prefix}Querying '{query}'{suffix}")
 
         async with aiosqlite.connect(DB) as db:

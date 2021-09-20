@@ -5,19 +5,20 @@ BASE_CREATE_SCRIPT = "./brazil-create-db.sql"
 INSERT_SCRIPT = "./brazil-insert-cities.sql"
 REPEAT_INSERT = 1000
 
-def create_db(cursor):
+
+def create_db(cursor: psycopg2.extensions.cursor) -> None:
     with open(BASE_CREATE_SCRIPT, "r") as sql:
         cursor.execute(sql.read())
 
     print("Database created!")
 
 
-def count_cities(cursor):
+def count_cities(cursor: psycopg2.extensions.cursor) -> int:
     cursor.execute("SELECT count(*) from cities")
     return cursor.fetchone()[0]
 
 
-def main():
+def main() -> None:
     connect_args = dict(
         host="localhost",
         database="postgres",

@@ -27,9 +27,9 @@ class Requester:
         Assigning a method as 'async' does no magic trick.
         This function is still SYNC.
         """
-        url = URL + str(secs)
+        url = f"{URL}{secs}"
         prefix = f"{self.color}R{self.rid}: "
-        suffix = f"{ENDC}"
+        suffix = ENDC
         print(f"{prefix}Requesting '{url}'{suffix}")
 
         content = requests.get(url).text

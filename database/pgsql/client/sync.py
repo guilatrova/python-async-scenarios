@@ -50,7 +50,7 @@ class Requester:
 
     def query_from_db(self, query: str) -> None:
         prefix = f"{self.color}R{self.rid}: "
-        suffix = f"{ENDC}"
+        suffix = ENDC
         print(f"{prefix}Querying '{query}'{suffix}")
 
         with closing(psycopg2.connect(**PGSQL_CONNECT_ARGS)) as db:

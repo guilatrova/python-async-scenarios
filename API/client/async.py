@@ -23,9 +23,9 @@ class Requester:
         self.color = COLORS[self.rid]
 
     async def pull_from_server(self, secs: int) -> None:
-        url = URL + str(secs)
+        url = f"{URL}{secs}"
         prefix = f"{self.color}R{self.rid}: "
-        suffix = f"{ENDC}"
+        suffix = ENDC
         print(f"{prefix}Requesting '{url}'{suffix}")
 
         async with aiohttp.ClientSession() as session:

@@ -43,7 +43,7 @@ class Requester:
 
     def query_from_db(self, query: str) -> None:
         prefix = f"{self.color}R{self.rid}: "
-        suffix = f"{ENDC}"
+        suffix = ENDC
         print(f"{prefix}Querying '{query}'{suffix}")
 
         with closing(sqlite3.connect(DB)) as db:
