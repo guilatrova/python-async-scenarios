@@ -1,4 +1,3 @@
-from typing import NoReturn
 import timeit
 import psycopg2
 from contextlib import closing
@@ -49,9 +48,9 @@ class Requester:
         self.rid = Requester.rid
         self.color = COLORS[self.rid]
 
-    def query_from_db(self, query: str) -> NoReturn:
+    def query_from_db(self, query: str) -> None:
         prefix = f"{self.color}R{self.rid}: "
-        suffix = f"{ENDC}"
+        suffix = ENDC
         print(f"{prefix}Querying '{query}'{suffix}")
 
         with closing(psycopg2.connect(**PGSQL_CONNECT_ARGS)) as db:
@@ -63,7 +62,7 @@ class Requester:
         print(f"{prefix}Query made! Db replied '{content}' rows{suffix}")
 
 
-def main():
+def main() -> None:
     r1 = Requester()
     r2 = Requester()
     r3 = Requester()

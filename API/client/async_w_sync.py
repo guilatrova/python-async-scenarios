@@ -1,5 +1,4 @@
 import asyncio
-from typing import NoReturn
 import requests
 import timeit
 
@@ -23,21 +22,21 @@ class Requester:
         self.rid = Requester.rid
         self.color = COLORS[self.rid]
 
-    async def pull_from_server(self, secs: int) -> NoReturn:
+    async def pull_from_server(self, secs: int) -> None:
         """
         Assigning a method as 'async' does no magic trick.
         This function is still SYNC.
         """
-        url = URL + str(secs)
+        url = f"{URL}{secs}"
         prefix = f"{self.color}R{self.rid}: "
-        suffix = f"{ENDC}"
+        suffix = ENDC
         print(f"{prefix}Requesting '{url}'{suffix}")
 
         content = requests.get(url).text
         print(f"{prefix}Request is finally done! Server replied '{content}'{suffix}")
 
 
-async def main():
+async def main() -> None:
     r1 = Requester()
     r2 = Requester()
     r3 = Requester()
